@@ -73,14 +73,8 @@ function addCard(){
     })
 }
 
-function createSet(){
-    document.createElement
-    let newSet = document.createElement("a");
-    newSet.classList.add("set");
-    newSet.href = 
-}
+
 addCardBtn.addEventListener('click', addCard);
-createBtn.addEventListener('click', )
 //Submit Function
 
 
