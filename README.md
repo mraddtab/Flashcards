@@ -3,7 +3,10 @@ This project is a web application that enables users to create multiple sets of 
 
 Motivation
 ===
-Flashcards are an effective tool for memorizing large amounts of information in a short amount of time. Instead of tediouslly writing down hundreds of terms and definitions on paper, users will be able to digitally organize their study sets in a easy to manage format without requiring an internet connection. This project is set to serve as one of many widgets in a larger web-application named "ToDo", which is a project aimed at creating a online tool designed to help students manage their time, and build effective studying habits. This is my second project done using HTML5,CSS and JavaScript, I've learned alot about front-end 
+Flashcards are an effective tool for memorizing large amounts of information in a short amount of time. Instead of tediouslly writing down hundreds of terms and definitions on paper, users will be able to digitally organize their study sets in a easy to manage format without requiring an internet connection. 
+
+This project is set to serve as one of many widgets in a larger web-application named "ToDo", which is a project aimed at creating a online tool designed to help students manage their time, and build effective studying habits. This is my second project done using HTML5,CSS and JavaScript, I've learned alot about front-end 
+
 Features
 ===
 - Create unlimited study sets.
