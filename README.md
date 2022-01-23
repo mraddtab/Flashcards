@@ -27,8 +27,7 @@ How to Install and Run
 7. Click 'Create' when done and find your newly created study set on the home page. 
 8. Use left and right arrow keys to go backwards and foward, and spacebar to flip the card.
 <img src="/Screenshots/FCTD.png" alt="Term"/>
-9. Get started! 
-10. <img src="/Screenshots/FCT.png" alt="Definition"/>
+<img src="/Screenshots/FCT.png" alt="Definition"/>
 
 Future Improvments and Current Shortcomings
 === 
