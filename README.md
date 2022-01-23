@@ -21,9 +21,10 @@ How to Install and Run
 1. Download and unzip "Flashcards-main" to a directory of your choice.
 2. Open "home.html".
 3. Click on "Create a new Study set".
-4. Come up with a title, and add cards.
-5. Click 'Create' when done. 
-6. Find your newly created study set on the home page, and get started! 
+<img src="/Screenshots/Home.png" alt="My cool logo"/>
+5. Come up with a title, and add cards.
+6. Click 'Create' when done. 
+7. Find your newly created study set on the home page, and get started! 
 
 Future Improvments and Current Shortcomings
 === 
