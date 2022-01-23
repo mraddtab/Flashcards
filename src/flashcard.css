@@ -116,6 +116,8 @@ nav{
 }
 #back{
     transform: rotateY(180deg);
+    background-color: darkgray;
+    border: white 1px solid;
 }
 .footer{
     display: flex;

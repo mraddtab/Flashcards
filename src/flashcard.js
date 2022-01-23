@@ -10,18 +10,20 @@ const count = document.querySelector('#current');
 const total = document.querySelector('#total');
 let currentSide = "front"; //or 'back'.
 let currentCard = 0;
-let terms = JSON.parse(localStorage.getItem('currentTerms'));
-let definitions = JSON.parse(localStorage.getItem('currentDefinitions'));
+let cards = JSON.parse(localStorage.getItem('cards'));
 let currentSet = localStorage.getItem('currentSet');
-
 title.textContent = localStorage.getItem('currentTitle');
+
 
 //This function update flashcard.html
 function loadFlashCards(){
-    front.textContent = terms[currentCard];
-    back.textContent = definitions[currentCard];
+    
+    let term =  Object.keys(cards[currentCard])[0];
+    let definition = cards[currentCard][term];
+    front.textContent = term;
+    back.textContent = definition;
     count.textContent = currentCard + 1 +'/';
-    total.textContent =  terms.length;
+    total.textContent =  cards.length;
 }
 //Flashcard functions.
 function flip(){
@@ -44,54 +46,58 @@ function reset(){
 function goBack(){
     if(currentCard > 0){
         currentCard -=1;
-        currentSide = "front";
-        front.style.transitionDuration = '0.1s'
-        front.style.transform = 'translate(-1300px, 0px)';
-        setTimeout(() =>{
-            front.style.transitionDuration = '0s';
-            front.style.transitionDelay = '0.12s';
-            front.style.transform = 'translate(1300px, 0px)';
-            
-        }, 125)
-        setTimeout(()=>{
-            front.style.transitionDelay = '0s';
-            front.style.transitionDuration = '0.12s'
-            front.style.transform = 'translate(0px, 0px)';
-        }, 250)
+        if(currentSide === "back"){
+            flip();
+        }
         loadFlashCards();
     }
 }
 function goForward(){
-    if(currentCard < terms.length - 1){
+    if(currentCard < cards.length - 1){
         currentCard +=1;
-        currentSide = "front";
-        front.style.transitionDuration = '0.1s'
-        front.style.transform = 'translate(1300px, 0px)';
-        setTimeout(() =>{
-            front.style.transitionDuration = '0s';
-            front.style.transitionDelay = '0.12s';
-            front.style.transform = 'translate(-1300px, 0px)';
-            
-        }, 125)
-        setTimeout(()=>{
-            front.style.transitionDelay = '0s';
-            front.style.transitionDuration = '0.12s'
-            front.style.transform = 'translate(0px, 0px)';
-        }, 250)
+        if(currentSide === "back"){
+            flip();
+        }
         loadFlashCards();
     }
 }
-function shuffle(){
-    for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        let temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
     }
+    return array;
 }
+
 resetBtn.addEventListener('click', reset);
 backBtn.addEventListener('click',goBack);
 forwardBtn.addEventListener('click', goForward);
-shuffleBtn.addEventListener('click', shuffle);
+shuffleBtn.addEventListener('click', () => {
+    cards = shuffle(cards);
+    reset();
+});
 cardContainer.addEventListener('click',flip);
+
+window.addEventListener("keydown", function(event) {
+    if (event.defaultPrevented) {
+      return;
+    }
+    else if (event.code === "Space"){
+        flip();
+    } else if (event.code === "ArrowLeft"){
+        goBack();
+    } else if (event.code === "ArrowRight"){
+        goForward();
+    }
+    event.preventDefault();
+  }, true);
+
+
+
 loadFlashCards();
