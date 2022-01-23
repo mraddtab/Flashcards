@@ -13,8 +13,6 @@ Features
 - Shuffle function.
 - Simple minimalist design to improve focus. 
 - Offline storage. 
-- 
-- 
 
 How to Install and Run
 ===
