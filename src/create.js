@@ -81,20 +81,25 @@ function addCard(){
 //Create a new set, return {set# -> card# -> {term->def}}
 function create(){
     //If set is null, set it to 1, else increment it.
-    if(localStorage.getItem('set#') === null){
-        localStorage.setItem('set#', 1);
+    if(terms.length === 0 || definitions.length === 0 || title === ""){
+        alert('Add terms or definitions');
     }
     else{
-        localStorage.setItem('set#', parseInt(localStorage.getItem('set#')) + 1);
+        if(localStorage.getItem('set#') === null){
+            localStorage.setItem('set#', 1);
+        }
+        else{
+            localStorage.setItem('set#', parseInt(localStorage.getItem('set#')) + 1);
+        }
+        let currentSet = localStorage.getItem('set#');
+        let newSet = [{'title':title.value}];
+        for(let i = 0; i < cards.length; i++){
+        let newPair = {}; 
+        newPair[terms[i].value] = definitions[i].value;
+        newSet.push(newPair);
+        }
+        localStorage.setItem(currentSet, JSON.stringify(newSet));
     }
-    let currentSet = localStorage.getItem('set#');
-    let newSet = [{'title':title.value}];
-    for(let i = 0; i < cards.length; i++){
-       let newPair = {}; 
-       newPair[terms[i].value] = definitions[i].value;
-       newSet.push(newPair);
-    }
-    localStorage.setItem(currentSet, JSON.stringify(newSet));
 }
 
 
