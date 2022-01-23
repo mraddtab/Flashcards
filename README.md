@@ -13,18 +13,22 @@ Features
 - Shuffle function.
 - Simple minimalist design to improve focus. 
 - Offline storage. 
-- Use arrow keys to go foward and backwards.
-- Press spacebar to flip the card.
+- 
+- 
 
 How to Install and Run
 ===
 1. Download and unzip "Flashcards-main" to a directory of your choice.
 2. Open "home.html".
 3. Click on "Create a new Study set".
-<img src="/Screenshots/Home.png" alt="My cool logo"/>
+<img src="/Screenshots/Home.png" alt="Home page"/>
 5. Come up with a title, and add cards.
-6. Click 'Create' when done. 
-7. Find your newly created study set on the home page, and get started! 
+<img src="/Screenshots/Create.png" alt="Createe"/>
+7. Click 'Create' when done and find your newly created study set on the home page. 
+8. Use left and right arrow keys to go backwards and foward, and spacebar to flip the card.
+<img src="/Screenshots/FCT.png" alt="Term"/>
+9. Get started! 
+10. <img src="/Screenshots/FCT.png" alt="Definition"/>
 
 Future Improvments and Current Shortcomings
 === 
