@@ -29,11 +29,11 @@ How to Install and Run
 
 Future Improvments and Current Shortcomings
 === 
-1. Include the option to edit a study set once created.
+1. Remove redudant code.
 2. Include sliding animations when going forward and backwards.
 3. Include a shuffle animation.
 4. Write data to a file instead of using localStorage.
-5. Remove redudant code.
+
 
 Credits
 ===
